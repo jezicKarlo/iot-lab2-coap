@@ -14,7 +14,6 @@ public class GetClient {
 
         if (coapResponse != null) {
             System.out.println(coapResponse.getCode());
-            System.out.println(coapResponse.getOptions());
             System.out.println(coapResponse.getResponseText());
         } else {
             System.out.println("Request failed");
