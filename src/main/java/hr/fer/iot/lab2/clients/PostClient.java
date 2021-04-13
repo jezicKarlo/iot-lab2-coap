@@ -6,11 +6,11 @@ import org.eclipse.californium.elements.exception.ConnectorException;
 
 import java.io.IOException;
 
-public class GetClient {
+public class PostClient {
 
     public static void main(String[] args) throws ConnectorException, IOException {
-        CoapClient client = new CoapClient("coap://localhost/sensors/temp");
-        CoapResponse coapResponse = client.get();
+        CoapClient client = new CoapClient("coap://localhost/sensors").useCONs();
+        CoapResponse coapResponse = client.post("temp", 0);
 
         if (coapResponse != null) {
             System.out.println(coapResponse.getCode());
